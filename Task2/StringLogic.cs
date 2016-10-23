@@ -20,24 +20,18 @@ namespace Task2
             if(ReferenceEquals(str1,null) || ReferenceEquals(str2,null))
                 throw new NullReferenceException();
 
-            List<char> firstString = str1.ToCharArray().ToList();
-            List<char> secondString = str2.ToCharArray().ToList();
+            var firstString = new SortedSet<char>(str1);
+            var secondString = new SortedSet<char>(str2);     
+            var resString = new SortedSet<char>(firstString.Union(secondString));
 
-            List<char> resString = firstString.Union(secondString).ToList();
-
-            resString.Sort();
-
-            var result = new StringBuilder();
-            char prev = ' ';
+            var res = new StringBuilder();
 
             foreach (var letter in resString)
             {
-                if(prev == letter) continue;
-                result.Append(letter);
-                prev = letter;
-            }
-
-            return result.ToString();
+                res.Append(letter);
+            }  
+            
+            return res.ToString();
         }
     }
 }
