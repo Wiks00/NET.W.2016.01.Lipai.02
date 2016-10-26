@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+ <Tests>
+    <String1>xyaabbbccccdefww</String1>
+    <String2>xxxxyyyyabklmopq</String2>
+    <ExpectedResult>abcdefklmopqwxy</ExpectedResult>
+  </Tests>
+  <Tests>
+    <String1>abcdefghijklmnopqrstuvwxyz</String1>
+    <String2>abcdefghijklmnopqrstuvwxyz</String2>
+    <ExpectedResult>abcdefghijklmnopqrstuvwxyz</ExpectedResult>
+  </Tests>
+</TestCases>

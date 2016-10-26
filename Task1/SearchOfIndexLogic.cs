@@ -43,10 +43,10 @@ namespace Task1
         /// <exception cref="ArgumentException"></exception>
         public static int? FindIndex(int[] array)
         {
-            if(array == null || array.Length == 1)
+            if(array == null || array.Length < 3)
                 throw new ArgumentException();
 
-            for (int index = 1; index < array.Length; index++)
+            for (int index = 1; index < array.Length - 1; index++)
             {
                 int right = array.Skip(index + 1).Aggregate((current, next) => current + next);
                 int left = array.Reverse().Skip(array.Length - index).Aggregate((current, next) => current + next);

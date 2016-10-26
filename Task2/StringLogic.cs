@@ -17,8 +17,8 @@ namespace Task2
         /// <exception cref="NullReferenceException"></exception>
         public static string СoncatenatingStrings(string str1, string str2)
         {
-            if(ReferenceEquals(str1,null) || ReferenceEquals(str2,null))
-                throw new NullReferenceException();
+            if(ReferenceEquals(str1,null) || ReferenceEquals(str2,null) || string.Equals(str1, string.Empty) || string.Equals(str2, string.Empty))
+                throw new ArgumentException();
 
             var firstString = new SortedSet<char>(str1);
             var secondString = new SortedSet<char>(str2);     
