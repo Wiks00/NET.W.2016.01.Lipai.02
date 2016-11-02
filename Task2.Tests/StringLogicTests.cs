@@ -24,12 +24,13 @@ namespace Task2.Tests
 
         [TestCase("fff",null)]
         [TestCase("","fff")]
+        [TestCase("742n", "fff")]
         public void СoncatenatingStrings_TestForArgumentException(string string1, string string2)
         {
             Assert.That(() => СoncatenatingStrings(string1, string2), Throws.TypeOf<ArgumentException>());
         }
 
-        private IEnumerable<string[]> GetXmlData()
+        private static IEnumerable<string[]> GetXmlData()
         {
             var xml = new XmlDocument();
             xml.Load(Directory.GetCurrentDirectory() + @"\Data.xml");
